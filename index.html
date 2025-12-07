@@ -1,38 +1,26 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TasteLink — Welcome</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumYum – Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="initIndex()">
-  <div class="container">
-    <div class="header">
-      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">KMITL Food Community</div></div></div>
-      <div id="userArea" class="muted">Not logged in</div>
-    </div>
+<body>
 
-    <div class="card">
-      <h2>ยินดีต้อนรับสู่ TasteLink</h2>
-      <p class="muted">เชื่อมต่อทุกเสียงใน KMITL — ดูร้านที่มาเปิด รีวิวจริง โหวตร้านที่อยากให้มา</p>
+    <header>
+        <h1>🍽️ YumYum – ระบบค้นหาร้านอาหาร</h1>
+    </header>
 
-      <label>ชื่อ (mock)</label>
-      <input type="text" id="username" placeholder="ชื่อที่จะแสดง">
-      <div style="display:flex;gap:8px;margin-top:10px">
-        <button onclick="mockLogin()">เริ่มใช้งาน</button>
-        <button class="btn-ghost" onclick="guestLogin()">ทดลอง (Guest)</button>
-        <a href="restaurants.html" style="margin-left:auto;align-self:center" class="muted">ข้ามไปดูหน้า Demo</a>
-      </div>
-    </div>
+    <main>
+        <button onclick="location.href='restaurants.html'">ดูรายชื่อร้านอาหาร</button>
+        <button onclick="location.href='rank.html'">จัดอันดับร้านยอดนิยม</button>
+        <button onclick="location.href='avatar.html'">Avatar Taste Profile</button>
+        <button onclick="location.href='com.html'">คอมมิวนิตี้รีวิว</button>
+    </main>
 
-    <div class="card small">
-      <h4>About</h4>
-      <p class="muted">Prototype นี้เป็นตัวอย่าง UI/Flow สำหรับ Pitch — ข้อมูลทั้งหมดเก็บใน browser (localStorage)</p>
-    </div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
 
-    <div class="footer">Prototype — TasteLink • ใช้สำหรับ Hackathon demo</div>
-  </div>
 </body>
 </html>
