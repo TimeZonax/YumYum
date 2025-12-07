@@ -1,23 +1,31 @@
-<!doctype html>
-<html lang="th">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TasteLink — Ranking</title>
-<link rel="stylesheet" href="style.css">
-<script src="data.js"></script><script src="script.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>อันดับร้านยอดนิยม – YumYum</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="initRanking()">
-  <div class="container">
-    <div class="header">
-      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">Ranking</div></div></div>
-      <div id="userArea" class="muted"></div>
-    </div>
+<body>
 
-    <div class="card">
-      <h4>ร้านยอดนิยม (รวมคะแนนเมนู)</h4>
-      <div id="rankList"></div>
-    </div>
+<h1>🏆 จัดอันดับร้านยอดนิยม</h1>
 
-    <div class="footer">Prototype — TasteLink</div>
-  </div>
+<div id="rankArea"></div>
+
+<script src="js/data.js"></script>
+<script>
+    const sorted = [...restaurants].sort((a,b)=>b.rating - a.rating);
+
+    const rankArea = document.getElementById("rankArea");
+    sorted.forEach((r,i)=>{
+        rankArea.innerHTML += `
+            <div class="rank-card">
+                <span class="rank-num">${i+1}</span>
+                <h3>${r.name}</h3>
+                <p>⭐ ${r.rating}</p>
+            </div>
+        `;
+    });
+</script>
+
 </body>
 </html>
