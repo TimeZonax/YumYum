@@ -1,30 +1,25 @@
-<!doctype html>
-<html lang="th">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TasteLink — Rate</title>
-<link rel="stylesheet" href="style.css">
-<script src="data.js"></script><script src="script.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ให้คะแนนร้าน – YumYum</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="initRating()">
-  <div class="container">
-    <div class="header">
-      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">ให้คะแนน & รีวิว</div></div></div>
-      <div id="userArea" class="muted"></div>
-    </div>
+<body>
 
-    <div class="card">
-      <h4>ให้คะแนนร้าน</h4>
-      <label>ดาว (1-5)</label>
-      <input id="star" type="number" min="1" max="5" value="5">
-      <label>คอมเมนต์สั้น ๆ</label>
-      <textarea id="comment" placeholder="รีวิวสั้น ๆ (เช่น อร่อยมาก!)" rows="4"></textarea>
-      <div style="margin-top:12px">
-        <button onclick="submitRating()">โพสต์รีวิว</button>
-        <a href="restaurant-detail.html" class="btn-ghost" style="margin-left:8px;padding:8px 12px">ยกเลิก</a>
-      </div>
-    </div>
+<div id="rating"></div>
 
-    <div class="footer">Prototype — TasteLink</div>
-  </div>
+<script src="js/data.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const data = restaurants.find(r => r.id == id);
+
+    document.getElementById("rating").innerHTML = `
+        <h1>ให้คะแนนร้าน ${data.name}</h1>
+        <button onclick="alert('ส่งคะแนนสำเร็จ! (Prototype)')">ส่งคะแนน</button>
+    `;
+</script>
+
 </body>
 </html>
