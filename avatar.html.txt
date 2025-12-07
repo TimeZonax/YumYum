@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TasteLink — Avatar</title>
+<link rel="stylesheet" href="style.css">
+<script src="data.js"></script><script src="script.js"></script>
+</head>
+<body onload="initAvatar()">
+  <div class="container">
+    <div class="header">
+      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">Create your avatar</div></div></div>
+      <div id="userArea" class="muted">Not logged in</div>
+    </div>
+
+    <div class="card center">
+      <h3>เลือก Avatar ของคุณ</h3>
+      <div class="avatar-preview" id="avatarPreview">🙂</div>
+
+      <div style="margin-top:12px">
+        <label>เลือกรูปหน้า</label>
+        <div style="display:flex;gap:8px">
+          <label><input type="radio" name="avatarChoice" value="🙂" onchange="document.getElementById('avatarPreview').textContent='🙂'"> 🙂</label>
+          <label><input type="radio" name="avatarChoice" value="😎" onchange="document.getElementById('avatarPreview').textContent='😎'"> 😎</label>
+          <label><input type="radio" name="avatarChoice" value="🤓" onchange="document.getElementById('avatarPreview').textContent='🤓'"> 🤓</label>
+          <label><input type="radio" name="avatarChoice" value="😋" onchange="document.getElementById('avatarPreview').textContent='😋'"> 😋</label>
+        </div>
+
+        <label style="margin-top:8px">สีโปรไฟล์</label>
+        <div style="display:flex;gap:8px">
+          <label><input type="radio" name="avatarColor" value="#1e90ff" onchange="document.getElementById('avatarPreview').style.background='#1e90ff'"> ฟ้า</label>
+          <label><input type="radio" name="avatarColor" value="#7d5fff" onchange="document.getElementById('avatarPreview').style.background='#7d5fff'"> ม่วง</label>
+          <label><input type="radio" name="avatarColor" value="#ff6b6b" onchange="document.getElementById('avatarPreview').style.background='#ff6b6b'"> แดง</label>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:12px;justify-content:center">
+          <button onclick="saveAvatarSelection()">บันทึกและไปต่อ</button>
+          <a href="restaurants.html" class="btn-ghost" style="align-self:center;padding:8px 12px;border-radius:8px">ข้าม</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">Prototype — TasteLink</div>
+  </div>
+</body>
+</html>

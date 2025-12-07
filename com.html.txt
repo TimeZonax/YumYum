@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TasteLink — Community</title>
+<link rel="stylesheet" href="style.css">
+<script src="data.js"></script><script src="script.js"></script>
+</head>
+<body onload="initCommunity()">
+  <div class="container">
+    <div class="header">
+      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">Community Feed</div></div></div>
+      <div id="userArea" class="muted"></div>
+    </div>
+
+    <div class="card">
+      <h4>Feed ล่าสุด</h4>
+      <div id="feedList" class="feed"></div>
+    </div>
+
+    <div class="footer">Prototype — TasteLink</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TasteLink — Welcome</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</head>
+<body onload="initIndex()">
+  <div class="container">
+    <div class="header">
+      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">KMITL Food Community</div></div></div>
+      <div id="userArea" class="muted">Not logged in</div>
+    </div>
+
+    <div class="card">
+      <h2>ยินดีต้อนรับสู่ TasteLink</h2>
+      <p class="muted">เชื่อมต่อทุกเสียงใน KMITL — ดูร้านที่มาเปิด รีวิวจริง โหวตร้านที่อยากให้มา</p>
+
+      <label>ชื่อ (mock)</label>
+      <input type="text" id="username" placeholder="ชื่อที่จะแสดง">
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button onclick="mockLogin()">เริ่มใช้งาน</button>
+        <button class="btn-ghost" onclick="guestLogin()">ทดลอง (Guest)</button>
+        <a href="restaurants.html" style="margin-left:auto;align-self:center" class="muted">ข้ามไปดูหน้า Demo</a>
+      </div>
+    </div>
+
+    <div class="card small">
+      <h4>About</h4>
+      <p class="muted">Prototype นี้เป็นตัวอย่าง UI/Flow สำหรับ Pitch — ข้อมูลทั้งหมดเก็บใน browser (localStorage)</p>
+    </div>
+
+    <div class="footer">Prototype — TasteLink • ใช้สำหรับ Hackathon demo</div>
+  </div>
+</body>
+</html>
