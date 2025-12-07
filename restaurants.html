@@ -1,51 +1,31 @@
-<!doctype html>
-<html lang="th">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TasteLink — Restaurants</title>
-<link rel="stylesheet" href="style.css">
-<script src="data.js"></script><script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านอาหารทั้งหมด – YumYum</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="initRestaurants()">
-  <div class="container">
-    <div class="header">
-      <div class="brand"><div class="logo">TL</div><div><div class="title">TasteLink</div><div class="muted">ร้านที่มาเปิดสัปดาห์นี้</div></div></div>
-      <div id="userArea" class="muted"></div>
-    </div>
+<body>
 
-    <div class="grid-2">
-      <div>
-        <div class="card">
-          <h4>โหวตร้านสัปดาห์หน้า</h4>
-          <div class="muted">เลือก 1–3 ร้าน แล้วกดส่ง</div>
-          <div id="voteList" style="margin-top:8px"></div>
-          <div style="margin-top:8px"><button onclick="submitVote()">ส่งโหวต</button></div>
-        </div>
+<h2>📍 รายชื่อร้านอาหารทั้งหมด</h2>
 
-        <div class="card" style="margin-top:12px">
-          <h4>Community Feed (ตัวอย่าง)</h4>
-          <div id="feedList" class="feed"></div>
-          <div style="margin-top:8px"><a href="community.html" class="muted">ดูทั้งหมด</a></div>
-        </div>
-      </div>
+<div id="restaurantList"></div>
 
-      <div>
-        <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div><h3>ร้านประจำสัปดาห์</h3><div class="muted">เมนูยอดฮิต · สถานะคิว</div></div>
-            <div class="chip">Demo</div>
-          </div>
-          <div id="restaurantList" style="margin-top:12px"></div>
-        </div>
+<script src="js/data.js"></script>
+<script>
+    const list = document.getElementById("restaurantList");
 
-        <div class="card" style="margin-top:12px">
-          <h4>Ranking</h4>
-          <div id="rankList"></div>
-          <div style="margin-top:8px"><a href="ranking.html" class="muted">ดูรายละเอียด Ranking</a></div>
-        </div>
-      </div>
-    </div>
+    restaurants.forEach(r => {
+        list.innerHTML += `
+            <div class="card" onclick="location.href='restaurantdetail.html?id=${r.id}'">
+                <img src="img/${r.image}">
+                <h3>${r.name}</h3>
+                <p>${r.category}</p>
+            </div>
+        `;
+    });
+</script>
 
-    <div class="footer">Prototype — TasteLink</div>
-  </div>
 </body>
 </html>
